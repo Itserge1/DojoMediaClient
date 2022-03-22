@@ -32,7 +32,7 @@ const LoginRegister = (props) => {
         axios.post(`${process.env.REACT_APP_LINK}/api/login`, form, {withCredentials:true}) // {withCredentials:true} allow us to pass in cookies back and forth(lol)
             .then( res => {
                 console.log({message:"login info", results: res});
-                history.push("/home")
+                history.push("/profile")
             })
             .catch(err => {
                 console.log({message:"here is err", errors:err});
