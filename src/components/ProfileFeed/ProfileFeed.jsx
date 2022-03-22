@@ -22,7 +22,7 @@ const ProfileFeed = (props) => {
 
     // GET USER BY USERNAME 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/finduser/username/${props.username}`, { withCredentials: true })
+        axios.get(`${process.env.REACT_APP_LINK}/api/finduser/username/${props.username}`, { withCredentials: true })
             .then(res => {
                 // console.log("LeftBar: Your logged in user info", res)
                 // res.data.results will contains the info of the user, 
@@ -80,7 +80,7 @@ const ProfileFeed = (props) => {
 
     // FIND ALL USER AN USER'S FREIND POST
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/post/find/onlyuser/${props.username}`, { withCredentials: true })
+        axios.get(`${process.env.REACT_APP_LINK}/api/post/find/onlyuser/${props.username}`, { withCredentials: true })
             .then(res => {
                 console.log({ message: "All user posts and freind posts base on username", result: res })
                 // setAllpost(res.data.results);
@@ -115,7 +115,7 @@ const ProfileFeed = (props) => {
     // GET USER'S FRIENDS
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/finduser/friends/${props.userByUsername._id}`)
+        axios.get(`${process.env.REACT_APP_LINK}/api/finduser/friends/${props.userByUsername._id}`)
             .then(res => {
                 setAllFriend(res.data);
                 // console.log({message:"here is all user's freinds", friends:res});
@@ -128,7 +128,7 @@ const ProfileFeed = (props) => {
 
     // GET THE LOGGED IN USER WITH JASONWEBTOKEN
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/finduser`, {withCredentials:true})
+        axios.get(`${process.env.REACT_APP_LINK}/api/finduser`, {withCredentials:true})
         .then(res => {
             // console.log("LeftBar: Your logged in user info", res)
             // res.data.results will contains the info of the user, 
@@ -161,7 +161,7 @@ const ProfileFeed = (props) => {
     // FOLLOW OR UNFOLLOW USER
     const FollowUser = () => {
         // Then Follow user
-        axios.put(`http://localhost:8000/api/follow/${User._id}`, {_id: LoggedInUser._id})
+        axios.put(`${process.env.REACT_APP_LINK}/api/follow/${User._id}`, {_id: LoggedInUser._id})
         .then( res => {
             console.log({message: "User follow successfully", result:res});
             setIsValidFollow(true);
@@ -178,7 +178,7 @@ const ProfileFeed = (props) => {
 
     const UnfollowUser = () => {
         // Then Unfollow user
-        axios.put(`http://localhost:8000/api/unfollow/${User._id}`, {_id: LoggedInUser._id})
+        axios.put(`${process.env.REACT_APP_LINK}/api/unfollow/${User._id}`, {_id: LoggedInUser._id})
         .then(res => {
             console.log({message:"User unfollow successfully",result: res})
             setIsValidFollow(false);

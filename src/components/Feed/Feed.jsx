@@ -14,7 +14,7 @@ const Feed = (props) => {
     // GET ALL USER AND USER'S FREINDS POST
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/post/find", {withCredentials:true} )
+        axios.get(`${process.env.REACT_APP_LINK}/api/post/find`, {withCredentials:true} )
             .then(res => {
                 console.log({message: "All user posts and freind posts", result: res})
                 // setAllpost(res.data.results) // all post

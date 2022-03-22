@@ -15,7 +15,7 @@ const EditProfilePage = () => {
     const history = useHistory();
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/finduser", { withCredentials: true })
+        axios.get(`${process.env.REACT_APP_LINK}/api/finduser`, { withCredentials: true })
             .then(res => {
                 console.log("Your logged in user info", res)
                 // res.data.results will contains the info of the user, 
@@ -66,7 +66,7 @@ const EditProfilePage = () => {
     // UPDATING USER INFO
     const UpdateLoggedUserInfo = (event) => {
         event.preventDefault();
-        axios.patch("http://localhost:8000/api/update", userForm, { withCredentials: true })
+        axios.patch(`${process.env.REACT_APP_LINK}/api/update`, userForm, { withCredentials: true })
             .then(res => {
                 // history.push(`/profile/${LoggedInUser.username}`)
                 history.push(`/home`)
@@ -106,7 +106,7 @@ const EditProfilePage = () => {
             // console.log({message:"new object", newObject:newObject})
 
             // Upadting our cover picture in MongoDB
-            axios.patch("http://localhost:8000/api/update/coverpicture", newObject, { withCredentials: true })
+            axios.patch(`${process.env.REACT_APP_LINK}/api/update/coverpicture`, newObject, { withCredentials: true })
                 .then(res => {
                     console.log({ message: "Successfully update cover picture", result: res });
                     history.push("/home");
@@ -132,7 +132,7 @@ const EditProfilePage = () => {
             // console.log({message:"new object", newObject:newObject})
 
             // Updating user profile pic in MongoDB
-            axios.patch("http://localhost:8000/api/update/profilepicture", newObject, { withCredentials: true })
+            axios.patch(`${process.env.REACT_APP_LINK}/api/update/profilepicture`, newObject, { withCredentials: true })
                 .then(res => {
                     console.log({ message: "Successfully update profile picture", result: res });
                     history.push("/home")
@@ -154,7 +154,7 @@ const EditProfilePage = () => {
 
     // Delecte
     const deleteUser = () => {
-        axios.delete("http://localhost:8000/api/delete", { withCredentials: true })
+        axios.delete(`${process.env.REACT_APP_LINK}/api/delete`, { withCredentials: true })
             .then(res => {
                 console.log({ message: "user delete successfully", result: res })
                 history.push('/')
