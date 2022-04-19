@@ -10,7 +10,7 @@ const NotificationsPop = () => {
 
                 <div>
                     <div className="profile-pic">
-                        <img src={`${PUBLIC_FOLDER}person/1.png`} alt="Person picture" />
+                        <img src="https://res.cloudinary.com/dvocilaus/image/upload/v1649540403/my-social-media-uploads/ktxmnakklajzh2g3vvcn.png" alt="Person picture" />
                     </div>
                     <div className="notification-body">
                         <b>Kenny Michel </b> accepted your friend request
@@ -20,7 +20,7 @@ const NotificationsPop = () => {
 
                 <div>
                     <div className="profile-pic">
-                        <img src={`${PUBLIC_FOLDER}person/1.png`} alt="Person picture" />
+                        <img src="https://res.cloudinary.com/dvocilaus/image/upload/v1649540403/my-social-media-uploads/ktxmnakklajzh2g3vvcn.png" alt="Person picture" />
                     </div>
                     <div className="notification-body">
                         <b>Alex Kubel </b> commented on your post
@@ -30,7 +30,7 @@ const NotificationsPop = () => {
 
                 <div>
                     <div className="profile-pic">
-                        <img src={`${PUBLIC_FOLDER}person/1.png`} alt="Person picture" />
+                        <img src="https://res.cloudinary.com/dvocilaus/image/upload/v1649540403/my-social-media-uploads/ktxmnakklajzh2g3vvcn.png" alt="Person picture" />
                     </div>
                     <div className="notification-body">
                         <b>Micheal Smith </b> Started following you
@@ -40,7 +40,7 @@ const NotificationsPop = () => {
 
                 <div>
                     <div className="profile-pic">
-                        <img src={`${PUBLIC_FOLDER}person/1.png`} alt="Person picture" />
+                        <img src="https://res.cloudinary.com/dvocilaus/image/upload/v1649540403/my-social-media-uploads/ktxmnakklajzh2g3vvcn.png" alt="Person picture" />
                     </div>
                     <div className="notification-body">
                         <b>Brethany Amber  </b> share  your post
